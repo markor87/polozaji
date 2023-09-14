@@ -9,7 +9,7 @@ class PolozajiController extends Controller
 {
     public function index()
     {
-        $polozaji = Polozaji::with('sifarnikVrstaOrgana', 'sifarnikOrgani', 'sifarnikSektori', 'sifarnikPolozaj', 'sifarnikStatusPolozaja')->paginate(10);
+        $polozaji = Polozaji::with('sifarnikVrstaOrgana', 'sifarnikOrgani', 'sifarnikSektori', 'sifarnikPolozaj', 'sifarnikStatusPolozaja', 'konkursi')->paginate(10);
         return view('polozaji', ['polozaji' => $polozaji]);
     }
 }

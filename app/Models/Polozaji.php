@@ -10,7 +10,7 @@ class Polozaji extends Model
     use HasFactory;
 
     protected $connection = 'mysql2';
-    protected $table = 'polozaji';
+    protected $table = 'polozaji_62';
 
     public function sifarnikVrstaOrgana()
     {
@@ -35,6 +35,11 @@ class Polozaji extends Model
     public function sifarnikStatusPolozaja()
     {
         return $this->belongsTo(SifarnikStatusPolozaja::class, 'status', 'id');
+    }
+
+    public function konkursi()
+    {
+        return $this->hasMany(Konkursi::class, 'polozaji_id');
     }
 
     }

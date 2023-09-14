@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PolozajiController;
+use App\Livewire\SearchPolozaji;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/polozaji', [PolozajiController::class, 'index'])->name('polozaji');
+
+    Route::get('/search-polozaji', SearchPolozaji::class);
 
 
 });
