@@ -1,16 +1,15 @@
-<x-app-layout>
+<x-app-layout xmlns:wire="http://www.w3.org/1999/xhtml">
     {{--<x-slot name="header">--}}
     {{--    <h2 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
-    {{--        {{ __('Ocene') }}--}}
+    {{--        {{ __('Polozaji') }}--}}
     {{--    </h2>--}}
     {{--</x-slot>--}}
     <div class='container mx-auto p-6'>
-        <div class='mb-4 w-1/3'><input type='text' id="searchInput" placeholder='Search...'
-                                       class='w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500'>
-        </div>
-
+{{--        <div class='mb-4 w-1/3'><input type='text' id="searchInput" placeholder='Search...'--}}
+{{--                                       class='w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500'>--}}
+{{--        </div>--}}
+        @livewire('search-polozaji')
         <table class='min-w-full bg-white'>
-            @livewire('search-polozaji')
             <thead>
             <tr>
                 <th class='py-2 px-4 border-b border-gray-200 bg-gray-100 text-left'>Action</th>
@@ -37,7 +36,6 @@
                             <!-- Background overlay -->
                             <div @click="open = false" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
-                            <!-- Modal content -->
                             <!-- Modal content -->
                             <div class="flex items-center justify-center">
                                 <div class="bg-white rounded-lg overflow-y-auto shadow-xl transform transition-all w-full sm:max-w-2xl sm:w-full">

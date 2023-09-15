@@ -8,8 +8,6 @@ use App\Models\Polozaji;
 class SearchPolozaji extends Component
 {
     public $search = '';
-//    protected $layout = 'components.layouts.app';
-
     public function render()
     {
 
@@ -20,4 +18,11 @@ class SearchPolozaji extends Component
         }
         return view('livewire.search-polozaji', ['polozaji' => $polozaji]);
     }
+
+    public function updateSearch()
+    {
+
+    }
+
+
 }
