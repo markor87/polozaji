@@ -39,7 +39,7 @@ class Polozaji extends Model
 
     public function konkursi()
     {
-        return $this->hasMany(Konkursi::class, 'polozaji_id');
+        return $this->hasMany(Konkursi::class, 'polozaji_id')->orderBy('datum_objave', 'desc');
     }
 
     }

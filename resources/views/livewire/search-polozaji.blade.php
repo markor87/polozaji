@@ -34,10 +34,10 @@
                         <!-- Modal content -->
                         <div class="flex items-center justify-center">
                             <div
-                                class="bg-white rounded-lg overflow-y-auto shadow-xl transform transition-all w-full sm:max-w-2xl sm:w-full">
+                                class="bg-white rounded-lg overflow-y-auto shadow-xl transform transition-all w-full sm:max-w-full sm:w-full">
                                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                                        Детаљи о конкурсу за положај: {{ $polozaj->organ }} - {{ $polozaj->sektor }}
+                                        Детаљи о конкурсима за положај: {{ $polozaj->organ }} - {{ $polozaj->sektor }}
                                         - {{ $polozaj->polozaj }}
                                     </h3>
                                     <div class="mt-2">
@@ -49,26 +49,35 @@
                                             <thead>
                                             <tr>
                                                 <th class="border border-gray-300 px-4 py-2">Ид конкурса</th>
-                                                <th class="border border-gray-300 px-4 py-2">Положај</th>
+                                                {{--                                                <th class="border border-gray-300 px-4 py-2">Положај</th>--}}
                                                 <th class="border border-gray-300 px-4 py-2">Датум објаве</th>
                                                 <th class="border border-gray-300 px-4 py-2">Број седнице</th>
                                                 <th class="border border-gray-300 px-4 py-2">Број решења ВСС</th>
                                                 <th class="border border-gray-300 px-4 py-2">Члан комисије 1</th>
                                                 <th class="border border-gray-300 px-4 py-2">Члан комисије 2</th>
                                                 <th class="border border-gray-300 px-4 py-2">Члан комисије 3</th>
+                                                <th class="border border-gray-300 px-4 py-2">Број пријава</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум прегледа пријава</th>
+                                                <th class="border border-gray-300 px-4 py-2">Број кандидата у поступку
+                                                </th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум ОФК</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($polozaj->konkursi as $konkurs)
                                                 <tr>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->id }}</td>
-                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->organ . ' ' . ' ' . $konkurs->sektor }}</td>
+{{--                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->organ . ' ' . '-' . ' ' . $konkurs->sektor }}</td>--}}
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_objave }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_sednice }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_resenja_vss }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije1 }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije2 }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije3 }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_prijava }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_pregleda_prijava }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_kandidata_u_postupku }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_ofk }}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
