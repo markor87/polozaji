@@ -1,8 +1,8 @@
 <div xmlns:wire="http://www.w3.org/1999/xhtml">
     <label>
-        <input type="text" wire:model="search" wire:keydown="updateSearch"  placeholder="Search Polozaji...">
+        <input type="text" wire:model="search" wire:keydown="updateSearch" placeholder="Search Polozaji...">
     </label>
-{{--    <div>Current Search Value: {{ $search }}</div>--}}
+    {{--    <div>Current Search Value: {{ $search }}</div>--}}
     <table class='min-w-full bg-white'>
         <thead>
         <tr>
@@ -28,14 +28,17 @@
                     <!-- Modal code -->
                     <div x-show="open" class="fixed z-10 inset-0 overflow-y-auto">
                         <!-- Background overlay -->
-                        <div @click="open = false" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                        <div @click="open = false" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                             aria-hidden="true"></div>
 
                         <!-- Modal content -->
                         <div class="flex items-center justify-center">
-                            <div class="bg-white rounded-lg overflow-y-auto shadow-xl transform transition-all w-full sm:max-w-2xl sm:w-full">
+                            <div
+                                class="bg-white rounded-lg overflow-y-auto shadow-xl transform transition-all w-full sm:max-w-2xl sm:w-full">
                                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                                        Детаљи о конкурсу за положај: {{ $polozaj->organ }} - {{ $polozaj->sektor }} - {{ $polozaj->polozaj }}
+                                        Детаљи о конкурсу за положај: {{ $polozaj->organ }} - {{ $polozaj->sektor }}
+                                        - {{ $polozaj->polozaj }}
                                     </h3>
                                     <div class="mt-2">
                                         <!-- Displaying Konkursi for the Polozaj in Table Format -->
@@ -45,17 +48,27 @@
                                         <table class="min-w-full mt-2 border-collapse border border-gray-300">
                                             <thead>
                                             <tr>
-                                                <th class="border border-gray-300 px-4 py-2">Ид</th>
+                                                <th class="border border-gray-300 px-4 py-2">Ид конкурса</th>
                                                 <th class="border border-gray-300 px-4 py-2">Положај</th>
-                                                <!-- ... other headers ... -->
+                                                <th class="border border-gray-300 px-4 py-2">Датум објаве</th>
+                                                <th class="border border-gray-300 px-4 py-2">Број седнице</th>
+                                                <th class="border border-gray-300 px-4 py-2">Број решења ВСС</th>
+                                                <th class="border border-gray-300 px-4 py-2">Члан комисије 1</th>
+                                                <th class="border border-gray-300 px-4 py-2">Члан комисије 2</th>
+                                                <th class="border border-gray-300 px-4 py-2">Члан комисије 3</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($polozaj->konkursi as $konkurs)
                                                 <tr>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->id }}</td>
-                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->polozaji_id }}</td>
-                                                    <!-- ... other columns ... -->
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->organ . ' ' . ' ' . $konkurs->sektor }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_objave }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_sednice }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_resenja_vss }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije1 }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije2 }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->clan_komisije3 }}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
@@ -63,7 +76,8 @@
                                     </div>
                                 </div>
                                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                    <button @click="open = false" type="button" class="bg-blue-500 text-white px-4 py-2 rounded">
+                                    <button @click="open = false" type="button"
+                                            class="bg-blue-500 text-white px-4 py-2 rounded">
                                         Close
                                     </button>
                                 </div>
@@ -89,9 +103,11 @@
         </tbody>
     </table>
 
-{{--    <ul>--}}
-{{--        @foreach($polozaji as $polozaj)--}}
-{{--            <li>{{ $polozaj->organ }}</li>--}}
-{{--        @endforeach--}}
-{{--    </ul>--}}
+    {{--    <ul>--}}
+    {{--        @foreach($polozaji as $polozaj)--}}
+    {{--            <li>{{ $polozaj->organ }}</li>--}}
+    {{--        @endforeach--}}
+    {{--    </ul>--}}
+
 </div>
+
