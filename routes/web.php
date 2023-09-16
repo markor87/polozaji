@@ -32,5 +32,4 @@ Route::middleware([
 
     Route::get('/search-polozaji', SearchPolozaji::class);
 
-
 });

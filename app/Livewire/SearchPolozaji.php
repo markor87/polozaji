@@ -3,8 +3,8 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Polozaji;
 use Livewire\WithPagination;
+use App\Models\Polozaji;
 
 class SearchPolozaji extends Component
 {
@@ -14,23 +14,24 @@ class SearchPolozaji extends Component
 
     public function render()
     {
-        if (empty($this->search)) {
-            $polozaji = Polozaji::paginate(10); // or any other number for pagination
-        } else {
-            $polozaji = Polozaji::where('id', 'like', '%' . $this->search . '%')
+        $query = Polozaji::query();
+
+        if (!empty($this->search)) {
+            $query->where('id', 'like', '%' . $this->search . '%')
                 ->orWhere('organ', 'like', '%' . $this->search . '%')
-                ->orWhere('sektor', 'like', '%' . $this->search . '%')
-                ->orderBy('id')
-                ->paginate(10); // Apply pagination here as well
+                ->orWhere('sektor', 'like', '%' . $this->search . '%');
         }
+
+        $polozaji = $query->orderBy('id')->paginate(10);
+//        dd($this->search, $polozaji->lastItem(), $polozaji->total());
 
         return view('livewire.search-polozaji', ['polozaji' => $polozaji]);
     }
+
 
     public function updateSearch()
     {
         $this->resetPage();
     }
-
-
 }
+
