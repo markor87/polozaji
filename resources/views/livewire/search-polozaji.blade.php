@@ -58,9 +58,19 @@
                                                 <th class="border border-gray-300 px-4 py-2">Члан комисије 3</th>
                                                 <th class="border border-gray-300 px-4 py-2">Број пријава</th>
                                                 <th class="border border-gray-300 px-4 py-2">Датум прегледа пријава</th>
-                                                <th class="border border-gray-300 px-4 py-2">Број кандидата у поступку
-                                                </th>
+                                                <th class="border border-gray-300 px-4 py-2">Број кандидата у поступку</th>
                                                 <th class="border border-gray-300 px-4 py-2">Датум ОФК</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум ПФК</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум ПК</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум интервјуа</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум слања документације органу</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум предлаганја кандидата Влади</th>
+                                                <th class="border border-gray-300 px-4 py-2">Име и презиме</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум постављења</th>
+                                                <th class="border border-gray-300 px-4 py-2">Датум разрешења</th>
+                                                <th class="border border-gray-300 px-4 py-2">Укупно трајање</th>
+                                                <th class="border border-gray-300 px-4 py-2">Статус</th>
+                                                <th class="border border-gray-300 px-4 py-2">Напомена</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -78,6 +88,17 @@
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_pregleda_prijava }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->broj_kandidata_u_postupku }}</td>
                                                     <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_ofk }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_pfk }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_pk }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_intervjua }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_slanja_dok_organu }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_predlaganja_kandidata_vladi }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->ime_i_prezime }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_postavljenja }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->datum_razresenja }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->ukupno_trajanje }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->status }}</td>
+                                                    <td class="border border-gray-300 px-4 py-2">{{ $konkurs->napomena }}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
