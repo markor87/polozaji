@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <!-- Add your Livewire chart component here -->
                 @livewire('charts')
-{{--                <livewire:charts />--}}
+
             </div>
         </div>
     </div>

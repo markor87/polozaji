@@ -1,5 +1,8 @@
 import './bootstrap';
-import Chart from 'chart.js/auto';
+// import * as Chart from 'chart.js';
+
 // import 'alpinejs';
+// import Alpine from 'alpinejs';
+
 
 
