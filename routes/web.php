@@ -26,7 +26,8 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+
 
     Route::get('/polozaji', [PolozajiController::class, 'index'])->name('polozaji');
 
