@@ -11,7 +11,6 @@ class Brisel1PoVrstiOrgana extends Model
 
     protected $connection = 'mysql2';
     protected $table = 'brisel1_po_vrsti_organa';
-    protected $primaryKey = 'vrsta_organa';
 
 
 }

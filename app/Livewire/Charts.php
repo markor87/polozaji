@@ -20,12 +20,21 @@ class Charts extends Component
             'labels' => ['Postavljen', 'Vrsilac Duznosti', 'Upraznjeno'],
             'values' => [$ukupnoData->postavljen, $ukupnoData->vrsilac_duznosti, $ukupnoData->upraznjeno]
         ];
+
+    }
+
+    public function rendered()
+    {
+        $this->dispatch('initializeChart');
+
     }
 
     public function render()
     {
-        return view('livewire.Charts', [
+        return view('livewire.charts', [
             'data' => $this->tableData
         ]);
     }
+
+
 }

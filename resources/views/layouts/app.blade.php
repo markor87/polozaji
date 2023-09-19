@@ -15,9 +15,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
-<!--    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Styles -->
     @livewireStyles
@@ -47,7 +45,19 @@
 
 @livewireScripts
 
-<!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<script>
+    window.addEventListener('initializeChart', () => {
+        let alpineComponent = document.querySelector("[x-data*='chartData']");
+        if (alpineComponent && alpineComponent.__x) {
+            alpineComponent.__x.$data.initChart();
+        }
+    });
+
+</script>
 
 
 </body>
