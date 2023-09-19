@@ -1,9 +1,4 @@
-<script>
-    window.dispatchEvent(new Event('initializeChart'));
-</script>
-
-
-<div>
+<div xmlns:wire="http://www.w3.org/1999/xhtml" xmlns:x-on="http://www.w3.org/1999/xhtml">
     <div class="flex">
         <div class="w-1/2">
             <!-- Table Display -->
@@ -37,40 +32,41 @@
             </table>
         </div>
         <!-- Pie Chart Display -->
-        <div class="w-1/2"
-             x-data="chartData({{ json_encode($chartData) }})"
-             x-init="initChart()"
-             wire:ignore
-             x-on:initializeChart.window="initChart">
-
-        <canvas id="myChart" x-ref="chartCanvas"></canvas>
+        <div class="w-1/2" x-data="chartData()" x-init="initChart()" x-on:load="initChart()">
+            <canvas id="myChart"></canvas>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <script>
-            function chartData(data) {
+        <script xmlns:x-on="http://www.w3.org/1999/xhtml">
+            // import {Chart} from "chart.js";
+
+            function chartData() {
                 return {
                     chart: null,
-                    labels: data.labels,
-                    values: data.values,
                     initChart() {
-                        setTimeout(() => {
-                            if (this.$refs.chartCanvas) {
-                                this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
-                                    type: 'pie',
-                                    data: {
-                                        labels: this.labels,
-                                        datasets: [{
-                                            data: this.values,
-                                            // ... rest of the code
-                                        }]
-                                    }
-                                });
+                        this.chart = new Chart(document.getElementById('myChart'), {
+                            type: 'pie',
+                            data: {
+                                labels: @entangle('chartData.labels'),
+                                datasets: [{
+                                    data: @entangle('chartData.values'),
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
                             }
-                        }, 100);
+                        });
                     }
                 }
             }
-
         </script>
     </div>
 </div>
