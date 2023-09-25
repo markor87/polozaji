@@ -17,7 +17,7 @@ $this->tableData = Brisel1PoVrstiOrgana::all();
 $ukupnoData = Brisel1PoVrstiOrgana::where('vrsta_organa', 'Укупно')->first();
 
 $this->chartData = [
-'labels' => ['Postavljen', 'Vrsilac Duznosti', 'Upraznjeno'],
+'labels' => ['Постављен', 'Вршилац дужности', 'Упражњено'],
 'values' => [$ukupnoData->postavljen, $ukupnoData->vrsilac_duznosti, $ukupnoData->upraznjeno]
 ];
 
