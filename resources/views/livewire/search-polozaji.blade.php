@@ -4,8 +4,6 @@
                placeholder="Search Polozaji...">
     </label>
 
-<!--    <div>Current Search Value: {{ $search }}</div>-->
-
     <table class='min-w-full bg-white'>
         <thead>
         <tr>
@@ -140,12 +138,6 @@
                                             <td class="border border-gray-300 px-4 py-2">{{
                                                 $konkurs->id }}
                                             </td>
-                                            {{--
-                                            <td class="border border-gray-300 px-4 py-2">{{
-                                                $konkurs->organ . ' ' . '-' . ' ' . $konkurs->sektor
-                                                }}
-                                            </td>
-                                            --}}
                                             <td class="border border-gray-300 px-4 py-2">{{
                                                 $konkurs->datum_objave }}
                                             </td>
@@ -228,7 +220,6 @@
 
                 </div>
             </td>
-
             <td class='py-2 px-4 border-b border-gray-200'>{{ $polozaj->id }}</td>
             <td class='py-2 px-4 border-b border-gray-200'>{{ $polozaj->vrsta_organa }}</td>
             <td class='py-2 px-4 border-b border-gray-200'>{{ $polozaj->organ }}</td>
@@ -246,5 +237,8 @@
         @endforeach
         </tbody>
     </table>
+    <div class="mt-4">
+        {{ $polozaji->links() }}
+    </div>
 </div>
 

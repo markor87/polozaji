@@ -79,7 +79,6 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Row 1 -->
             <div class="flex flex-wrap -mx-2 mb-6">
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -93,7 +92,6 @@
                 </div>
             </div>
 
-            <!-- Row 2 -->
             <div class="flex flex-wrap -mx-2 mb-6">
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -107,7 +105,6 @@
                 </div>
             </div>
 
-            <!-- Row 3 -->
             <div class="flex flex-wrap -mx-2 mb-6">
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -121,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Row 4 -->
             <div class="flex flex-wrap -mx-2 mb-6">
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -135,7 +131,6 @@
                 </div>
             </div>
 
-            <!-- Row 5 -->
             <div class="flex flex-wrap -mx-2 mb-6">
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -145,6 +140,45 @@
                 <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         @livewire('broj-zavrsenih-konkursa-u2023-component')
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-2 mb-6">
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-postavljenih-tokom-2023-component')
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-postavljenih-tokom-2022-component')
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-2 mb-6">
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-ponovo_postavljenih-tokom-2023-component')
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-ponovo_postavljenih-tokom-2022-component')
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-2 mb-6">
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-lica-nastavlja-rad-tokom-2023-component')
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        @livewire('broj-lica-nastavlja-rad-tokom-2022-component')
                     </div>
                 </div>
             </div>
