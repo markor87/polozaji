@@ -76,119 +76,93 @@
 
 <x-app-layout>
     <!-- Main Dashboard Container -->
-    <div class="py-12">
+    <div class="py-12 bg-gray-200 min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj_aktivnih_polozaja-component')
-                    </div>
+            <!-- Dashboard Title -->
+            <h1 class="text-2xl font-bold mb-8">Dashboard Overview</h1>
+
+            <!-- Dashboard Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj_aktivnih_polozaja-component')
                 </div>
-                <div class="w-full sm:w-1/2 px-2">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj_postavljenih_na_polozaju-component')
-                    </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj_postavljenih_na_polozaju-component')
                 </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj_vd-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj_upraznjenih-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('prosecno-vreme-trajanja-konkursa-u-toku-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('prosecno-vreme-trajanja-konkursa-u-2022-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-raspisanih-konkursa-u-toku-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-raspisanih-konkursa-u2023-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-raspisanih-konkursa-u2022-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-zavrsenih-konkursa-u2023-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-postavljenih-tokom-2023-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-postavljenih-tokom-2022-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-ponovo_postavljenih-tokom-2023-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-ponovo_postavljenih-tokom-2022-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-lica-nastavlja-rad-tokom-2023-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    @livewire('broj-lica-nastavlja-rad-tokom-2022-component')
+                </div>
+
             </div>
 
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj_vd-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj_upraznjenih-component')
-                    </div>
-                </div>
+            <!-- Charts Section -->
+            <h2 class="text-xl font-semibold mb-4">Performance Charts</h2>
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition mb-6">
+                @livewire('broj-aktivnih-vd-po-mesecima-2022-component')
             </div>
 
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('prosecno-vreme-trajanja-konkursa-u-toku-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('prosecno-vreme-trajanja-konkursa-u-2022-component')
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-raspisanih-konkursa-u-toku-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-raspisanih-konkursa-u2023-component')
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-raspisanih-konkursa-u2022-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-zavrsenih-konkursa-u2023-component')
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-postavljenih-tokom-2023-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-postavljenih-tokom-2022-component')
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-ponovo_postavljenih-tokom-2023-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-ponovo_postavljenih-tokom-2022-component')
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-2 mb-6">
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-lica-nastavlja-rad-tokom-2023-component')
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 px-2 mb-4 sm:mb-0">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        @livewire('broj-lica-nastavlja-rad-tokom-2022-component')
-                    </div>
-                </div>
-            </div>
-
-            <!-- Charts -->
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mb-6">
+            <!-- Charts Section -->
+            <h2 class="text-xl font-semibold mb-4">Performance Charts</h2>
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition mb-6">
                 @livewire('charts')
             </div>
 
         </div>
     </div>
-
 </x-app-layout>
