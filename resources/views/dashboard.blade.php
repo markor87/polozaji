@@ -1,79 +1,3 @@
-{{--<x-app-layout>--}}
-{{--    <!-- <x-slot name="header">--}}
-{{--        <h2 class="font-semibold text-xl text-gray-800 leading-tight">--}}
-{{--            {{ __('Dashboard') }}--}}
-{{--    </h2>--}}
-{{--</x-slot> -->--}}
-
-{{--    <!-- Main Dashboard Container -->--}}
-{{--    <div class="py-12">--}}
-{{--        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">--}}
-
-{{--            <div class="flex space-x-4 mb-6">--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj_aktivnih_polozaja-component')--}}
-{{--                </div>--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj_postavljenih_na_polozaju-component')--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="flex space-x-4 mb-6">--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj_vd-component')--}}
-{{--                </div>--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj_upraznjenih-component')--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="flex space-x-4 mb-6">--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('prosecno-vreme-trajanja-konkursa-u-toku-component')--}}
-{{--                </div>--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('prosecno-vreme-trajanja-konkursa-u-2022-component')--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="flex space-x-4 mb-6">--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj-raspisanih-konkursa-u-toku-component')--}}
-{{--                </div>--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj-raspisanih-konkursa-u2023-component')--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="flex space-x-4 mb-6">--}}
-
-{{--                <div class="w-1/2 bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
-{{--                    @livewire('broj-raspisanih-konkursa-u2022-component')--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mb-6">--}}
-{{--                @livewire('charts')--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</x-app-layout>--}}
-
-
 <x-app-layout>
     <!-- Main Dashboard Container -->
     <div class="py-12 bg-gray-200 min-h-screen">
@@ -149,16 +73,32 @@
                     @livewire('broj-lica-nastavlja-rad-tokom-2022-component')
                 </div>
 
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold mb-4">Број директора и помоћника директора у управама</h2>
+                    @livewire('broj-direktora-pomocnika-uprave-component')
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold mb-4">Број директора и помоћника директора у службама Владе</h2>
+                    @livewire('broj-direktora-pomocnika-sluzbe-component')
+                </div>
+
             </div>
 
             <!-- Charts Section -->
-            <h2 class="text-xl font-semibold mb-4">Performance Charts</h2>
+            <h2 class="text-xl font-semibold mb-4">Број ВД-а по месецима 2022.</h2>
             <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition mb-6">
                 @livewire('broj-aktivnih-vd-po-mesecima-2022-component')
             </div>
 
             <!-- Charts Section -->
-            <h2 class="text-xl font-semibold mb-4">Performance Charts</h2>
+            <h2 class="text-xl font-semibold mb-4">Број ВД-а по месецима 2023.</h2>
+            <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition mb-6">
+                @livewire('broj-aktivnih-vd-po-mesecima-2023-component')
+            </div>
+
+            <!-- Charts Section -->
+            <h2 class="text-xl font-semibold mb-4">Статус ДС по врсти органа</h2>
             <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition mb-6">
                 @livewire('charts')
             </div>
@@ -166,3 +106,39 @@
         </div>
     </div>
 </x-app-layout>
+
+{{--<x-app-layout>--}}
+{{--    <!-- Main Dashboard Container -->--}}
+{{--    <div class="bg-gray-200 min-h-screen p-4 md:p-12">--}}
+{{--        <div class="max-w-7xl mx-auto">--}}
+
+{{--            <!-- Dashboard Title -->--}}
+{{--            <h1 class="text-2xl font-bold mb-8">Dashboard Overview</h1>--}}
+
+{{--            <!-- Dashboard Cards -->--}}
+{{--            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">--}}
+{{--                <!-- Reusable Card Component -->--}}
+{{--                <x-card title="Active Positions">--}}
+{{--                    @livewire('broj_aktivnih_polozaja-component')--}}
+{{--                </x-card>--}}
+{{--                <!-- ... Repeat for other cards ... -->--}}
+{{--            </div>--}}
+
+{{--            <!-- Charts Section -->--}}
+{{--            <div class="mb-8">--}}
+{{--                <x-chart-section title="Monthly VD Count 2022">--}}
+{{--                    @livewire('broj-aktivnih-vd-po-mesecima-2022-component')--}}
+{{--                </x-chart-section>--}}
+
+{{--                <x-chart-section title="Monthly VD Count 2023">--}}
+{{--                    @livewire('broj-aktivnih-vd-po-mesecima-2023-component')--}}
+{{--                </x-chart-section>--}}
+
+{{--                <x-chart-section title="DS Status by Organ Type">--}}
+{{--                    @livewire('charts')--}}
+{{--                </x-chart-section>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</x-app-layout>--}}

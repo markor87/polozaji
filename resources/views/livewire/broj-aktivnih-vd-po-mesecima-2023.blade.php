@@ -1,12 +1,12 @@
 <div>
     <div class="w-full"
-         x-data="chartData2({{ json_encode($chartData) }})"
-         x-init="initChart2()">
-        <canvas id="myChart2" x-ref="chartCanvas"></canvas>
+         x-data="chartData3({{ json_encode($chartData) }})"
+         x-init="initChart3()">
+        <canvas id="myChart3" x-ref="chartCanvas"></canvas>
     </div>
 
     <script>
-        function chartData2(data) {
+        function chartData3(data) {
             return {
                 chart: null,
                 labels: data.labels,
@@ -21,8 +21,8 @@
                                     datasets: [{
                                         label: 'Број активних вд-а',
                                         data: this.values,
-                                        backgroundColor: 'rgba(17,121,204,0.2)', // same color for all bars
-                                        borderColor: 'rgb(5,133,232)', // same color for all bars
+                                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // same color for all bars
+                                        borderColor: 'rgb(75,159,222)', // same color for all bars
                                         borderWidth: 1
                                     }]
                                 },
