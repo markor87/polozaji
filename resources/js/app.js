@@ -1,5 +1,6 @@
 import './bootstrap';
 
+Chart.register(ChartDataLabels);
 // import * as Chart from 'chart.js';
 
 // import Alpine from 'alpinejs'

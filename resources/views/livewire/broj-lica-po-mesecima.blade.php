@@ -4,49 +4,36 @@
         <table class="min-w-full mt-2 border-collapse border border-gray-300">
             <thead>
             <tr>
-                <th class="border border-gray-300 px-4 py-2">Врста органа</th>
-                <th class="border border-gray-300 px-4 py-2">Постављен</th>
-                <th class="border border-gray-300 px-4 py-2">Проценат постављених</th>
-                <th class="border border-gray-300 px-4 py-2">Вршилац дужности</th>
-                <th class="border border-gray-300 px-4 py-2">Проценат ВД</th>
-                <th class="border border-gray-300 px-4 py-2">Упражњено</th>
-                <th class="border border-gray-300 px-4 py-2">Проценат упражњено</th>
+                <th class="border border-gray-300 px-4 py-2">Број месеци</th>
+                <th class="border border-gray-300 px-4 py-2">Број лица</th>
             </tr>
             </thead>
             <tbody>
             @foreach($data as $row)
-            <tr>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->vrsta_organa }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->postavljen }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->procenat_postavljenih }}
-                </td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->vrsilac_duznosti }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->procenat_vd }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->upraznjeno }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ $row->procenat_upraznjeno }}
-                </td>
-            </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">{{ $row->{'Број месеци'} }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $row->{'Број лица'} }}</td>
+                </tr>
             @endforeach
             </tbody>
         </table>
     </div>
     <!-- Pie Chart Display -->
     <div class="w-1/2 mt-4"
-         x-data="chartData({{ json_encode($chartData) }})"
-         x-init="initChart()">
+         x-data="chartData6({{ json_encode($chartData) }})"
+         x-init="initChart6()">
         <canvas id="myChart" x-ref="chartCanvas" width="400" height="400"></canvas>
     </div>
 
     <script>
-        function chartData(data) {
+        function chartData6(data) {
             return {
                 chart: null,
                 labels: data.labels,
                 values: data.values,
-                initChart() {
+                initChart6() {
                     setTimeout(() => {
                         if (this.$refs.chartCanvas) {
-                            let total = this.values.reduce((acc, val) => acc + Number(val), 0);  // Ensure values are treated as numbers
                             this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
                                 type: 'pie',
                                 data: {
@@ -56,12 +43,16 @@
                                         backgroundColor: [
                                             'rgba(255, 99, 132, 0.2)',
                                             'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)'
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(217,54,235,0.2)',
+                                            'rgba(24,196,101,0.2)'
                                         ],
                                         borderColor: [
                                             'rgba(255, 99, 132, 1)',
                                             'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)'
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(217,54,235,1)',
+                                            'rgba(24,196,101,1)'
                                         ],
                                         borderWidth: 1
                                     }]
@@ -70,13 +61,18 @@
                                     plugins: {
                                         datalabels: {
                                             formatter: (value, context) => {
-                                                let percentage = value / total * 100;
-                                                return percentage.toFixed(2) + '%';
+                                                let sum = context.dataset.data.reduce((a, b) => a + b, 0);
+                                                let percentage = value / sum * 100;
+                                                return percentage.toFixed(2) + '%';  // displaying percentage with two decimal places
                                             },
-                                            color: '#000',
-                                            display: true,
-                                            align: 'center',
-                                            anchor: 'center'
+                                            labels: {
+                                                title: {
+                                                    color: '#000',
+                                                    display: true,
+                                                    align: 'center',
+                                                    anchor: 'center'
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -86,5 +82,6 @@
                 }
             }
         }
+
     </script>
 </div>

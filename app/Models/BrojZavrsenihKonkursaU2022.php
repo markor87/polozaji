@@ -5,17 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BrojAktivnihVDPoMesecima2022 extends Model
+class BrojZavrsenihKonkursaU2022 extends Model
 {
     use HasFactory;
 
     protected $connection = 'mysql2';
-    protected $table = 'broj_aktivnih_vd_po_mesecima_2022';
+    protected $table = 'broj_zavrsenih_konkursa_u_2022_godini';
     public $timestamps = false;
-
-    protected $fillable = [
-        'Јануар',
-        'Број активних вд-а'
-    ];
-
-   }
+}
