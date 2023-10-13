@@ -1,9 +1,9 @@
 <div>
-<div class="w-full"
-     x-data="chartData5({{ json_encode($chartData) }})"
-     x-init="initChart5()">
-    <canvas id="myChart5" x-ref="chartCanvas"></canvas>
-</div>
+    <div class="w-full"
+         x-data="chartData5({{ json_encode($chartData) }})"
+         x-init="initChart5()">
+        <canvas id="myChart5" x-ref="chartCanvas"></canvas>
+    </div>
     <script>
         function chartData5(data) {
             return {
@@ -15,6 +15,7 @@
                         if (this.$refs.chartCanvas) {
                             this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
                                 type: 'bar',
+                                plugins: [ChartDataLabels],
                                 data: {
                                     labels: this.labels,
                                     datasets: [{
@@ -30,10 +31,10 @@
                                     plugins: {
                                         datalabels: {
                                             color: 'black',
-                                            display: function(context) {
+                                            display: function (context) {
                                                 return context.dataset.data[context.dataIndex] !== 0;  // display labels with non-zero values
                                             },
-                                            formatter: function(value, context) {
+                                            formatter: function (value, context) {
                                                 return value;
                                             }
                                         }

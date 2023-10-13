@@ -289,12 +289,44 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
                 <x-chart-section title="Број лица по месецима">
                     @livewire('broj-lica-po-mesecima-component')
                 </x-chart-section>
+
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
 
+                <x-chart-section title="ВД 0-6 месеци">
+                    @livewire('vd-0-6-meseci-component')
+                </x-chart-section>
+
+                <x-chart-section title="ВД 7-9 месеци">
+                    @livewire('vd-7-9-meseci-component')
+                </x-chart-section>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
+                <x-chart-section title="ВД 10-24 месеца">
+                    @livewire('vd-10-24-meseca-component')
+                </x-chart-section>
+
+                <x-chart-section title="ВД 25-48 месеци">
+                    @livewire('vd-25-48-meseci-component')
+                </x-chart-section>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
+                <x-chart-section title="ВД 49 плус месеци">
+                    @livewire('vd-49-plus-meseci-component')
+                </x-chart-section>
+
+            </div>
 
         </div>
     </div>

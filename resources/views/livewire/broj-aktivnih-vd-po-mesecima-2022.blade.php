@@ -16,6 +16,7 @@
                         if (this.$refs.chartCanvas) {
                             this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
                                 type: 'bar',
+                                plugins: [ChartDataLabels],
                                 data: {
                                     labels: this.labels,
                                     datasets: [{
@@ -31,10 +32,10 @@
                                     plugins: {
                                         datalabels: {
                                             color: 'black',
-                                            display: function(context) {
+                                            display: function (context) {
                                                 return context.dataset.data[context.dataIndex] !== 0;  // display labels with non-zero values
                                             },
-                                            formatter: function(value, context) {
+                                            formatter: function (value, context) {
                                                 return value;
                                             }
                                         }

@@ -15,6 +15,7 @@
                         if (this.$refs.chartCanvas) {
                             this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
                                 type: 'bar',
+                                plugins: [ChartDataLabels],
                                 data: {
                                     labels: this.labels,
                                     datasets: [{

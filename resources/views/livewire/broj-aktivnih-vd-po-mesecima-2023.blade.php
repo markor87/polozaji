@@ -4,18 +4,18 @@
          x-init="initChart3()">
         <canvas id="myChart3" x-ref="chartCanvas"></canvas>
     </div>
-
     <script>
         function chartData3(data) {
             return {
                 chart: null,
                 labels: data.labels,
                 values: data.values,
-                initChart2() {
+                initChart3() {
                     setTimeout(() => {
                         if (this.$refs.chartCanvas) {
                             this.chart = new Chart(this.$refs.chartCanvas.getContext('2d'), {
                                 type: 'bar',
+                                plugins: [ChartDataLabels],
                                 data: {
                                     labels: this.labels,
                                     datasets: [{
