@@ -36,7 +36,7 @@ class SearchPolozaji extends Component
 
         $polozaji = $query->orderBy('id')->paginate(10);
 
-        return view('livewire.search-polozaji', ['polozaji' => $polozaji]);
+        return view('livewire.polozaji', ['polozaji' => $polozaji]);
     }
 
 

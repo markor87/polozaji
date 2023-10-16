@@ -21,6 +21,16 @@
                         {{ __('Polozaji') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('konkursi') }}" :active="request()->routeIs('konkursi')">
+                        {{ __('Конкурси') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('kandidati') }}" :active="request()->routeIs('kandidati')">
+                        {{ __('Кандидати') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

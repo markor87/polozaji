@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PolozajiController;
+use App\Http\Controllers\KonkursiController;
+use App\Http\Controllers\KandidatiController;
 use App\Livewire\SearchPolozaji;
+use App\Livewire\SearchKonkursi;
+use App\Livewire\SearchKandidati;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +36,13 @@ Route::middleware([
     Route::get('/polozaji', [PolozajiController::class, 'index'])->name('polozaji');
 
     Route::get('/search-polozaji', SearchPolozaji::class);
+
+    Route::get('/konkursi', [KonkursiController::class, 'index'])->name('konkursi');
+
+    Route::get('/search-konkursi', SearchKonkursi::class);
+
+    Route::get('/kandidati', [KandidatiController::class, 'index'])->name('kandidati');
+
+    Route::get('/search-kandidati', SearchKandidati::class);
 
 });

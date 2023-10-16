@@ -322,8 +322,16 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
 
-                <x-chart-section title="ВД 49 плус месеци">
+                <x-chart-section title="ВД 49+ месеци">
                     @livewire('vd-49-plus-meseci-component')
+                </x-chart-section>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+
+                <x-chart-section title="Полна структура">
+                    @livewire('polna-struktura-ukupno-component')
                 </x-chart-section>
 
             </div>
